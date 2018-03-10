@@ -1,6 +1,6 @@
 package solutions.alterego.android.unisannio.ateneo
 
-import solutions.alterego.android.unisannio.models.Article
+import solutions.alterego.android.unisannio.core.Article
 
 interface AteneoAvvisiView {
 

@@ -7,7 +7,7 @@ import rx.observers.TestSubscriber
 import solutions.alterego.android.MockitoRxTest
 import solutions.alterego.android.unisannio.Dst
 import solutions.alterego.android.unisannio.Giurisprudenza
-import solutions.alterego.android.unisannio.models.Article
+import solutions.alterego.android.unisannio.core.Article
 import solutions.alterego.android.unisannio.repository.ArticleParser
 import solutions.alterego.android.unisannio.repository.DocumentRetriever
 

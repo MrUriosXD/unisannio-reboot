@@ -1,7 +1,7 @@
 package solutions.alterego.android.unisannio.dbManager;
 
 import java.util.List;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 
  interface ISearchPresenter {
 

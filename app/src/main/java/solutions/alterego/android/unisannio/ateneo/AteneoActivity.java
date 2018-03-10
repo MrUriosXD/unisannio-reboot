@@ -31,7 +31,7 @@ import solutions.alterego.android.unisannio.analytics.AnalyticsManager;
 import solutions.alterego.android.unisannio.analytics.Screen;
 import solutions.alterego.android.unisannio.interfaces.OpenArticleDetailListener;
 import solutions.alterego.android.unisannio.map.UnisannioGeoData;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.models.ArticleAdapter;
 import solutions.alterego.android.unisannio.runtimePermission.PermissionManager;
 import timber.log.Timber;

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import solutions.alterego.android.unisannio.interfaces.Parser;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.utils.DateUtils;
 
 public class IngegneriaAvvisiDipartimentoParser implements Parser<Article> {

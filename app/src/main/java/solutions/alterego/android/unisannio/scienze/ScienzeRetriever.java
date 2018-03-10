@@ -2,8 +2,6 @@ package solutions.alterego.android.unisannio.scienze;
 
 import android.util.Log;
 
-import com.facebook.stetho.inspector.elements.android.AndroidDocumentConstants;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import java.io.IOException;
@@ -16,7 +14,7 @@ import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 
 public class ScienzeRetriever {
 

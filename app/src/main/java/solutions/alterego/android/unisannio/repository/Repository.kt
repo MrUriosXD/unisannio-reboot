@@ -2,7 +2,7 @@ package solutions.alterego.android.unisannio.repository
 
 import rx.Observable
 import solutions.alterego.android.unisannio.Faculty
-import solutions.alterego.android.unisannio.models.Article
+import solutions.alterego.android.unisannio.core.Article
 
 interface Repository {
     fun loadArticles(aculty: Faculty): Observable<List<Article>>

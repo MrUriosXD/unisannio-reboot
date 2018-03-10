@@ -10,7 +10,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import solutions.alterego.android.unisannio.URLS;
 import solutions.alterego.android.unisannio.interfaces.Parser;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.utils.ExtensionKt;
 import timber.log.Timber;
 

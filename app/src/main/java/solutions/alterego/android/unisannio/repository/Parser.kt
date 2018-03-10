@@ -2,7 +2,7 @@ package solutions.alterego.android.unisannio.repository
 
 import org.jsoup.nodes.Document
 import rx.Single
-import solutions.alterego.android.unisannio.models.Article
+import solutions.alterego.android.unisannio.core.Article
 
 interface Parser {
     fun parse(document: Document): Single<List<Article>>

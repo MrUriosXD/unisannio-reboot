@@ -16,6 +16,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 import solutions.alterego.android.unisannio.R;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.interfaces.OpenArticleDetailListener;
 import solutions.alterego.android.unisannio.utils.VHHeader;
 

@@ -3,7 +3,7 @@ package solutions.alterego.android.unisannio.interfaces;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 
 public interface OpenArticleDetailListener {
 

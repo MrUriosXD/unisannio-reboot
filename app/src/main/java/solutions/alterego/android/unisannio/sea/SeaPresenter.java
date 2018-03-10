@@ -13,7 +13,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import solutions.alterego.android.unisannio.interfaces.Parser;
 import solutions.alterego.android.unisannio.interfaces.IRetriever;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 
 public class SeaPresenter implements ISeaPresenter{
 

@@ -10,7 +10,7 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 import solutions.alterego.android.unisannio.URLS;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 
 public class IngegneriaAvvisiDipartimentoRetriever implements IngegneriaRetriever {
 

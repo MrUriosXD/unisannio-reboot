@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import solutions.alterego.android.unisannio.interfaces.Parser;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.utils.ExtensionKt;
 
 public class GiurisprudenzaParser implements Parser<Article> {

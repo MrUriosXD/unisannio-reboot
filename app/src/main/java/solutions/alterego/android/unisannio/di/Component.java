@@ -1,7 +1,9 @@
 package solutions.alterego.android.unisannio.di;
 
 import javax.inject.Singleton;
+import org.jetbrains.annotations.NotNull;
 import solutions.alterego.android.unisannio.App;
+import solutions.alterego.android.unisannio.GiurisprudenzaNewActivity;
 import solutions.alterego.android.unisannio.MainActivity;
 import solutions.alterego.android.unisannio.ateneo.AteneoActivity;
 import solutions.alterego.android.unisannio.ateneo.AteneoAvvisiFragment;
@@ -50,6 +52,8 @@ public interface Component {
     void inject(IngegneriaDipartimentoActivity ingegneriaDipartimentoActivity);
 
     void inject(IngegneriaAvvisiStudentiActivity ingegneriaAvvisiStudentiActivity);
+
+    void inject(@NotNull GiurisprudenzaNewActivity giurisprudenzaNewActivity);
 
     final class Initializer {
         public static Component init(App app) {

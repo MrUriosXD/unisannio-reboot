@@ -27,7 +27,7 @@ import solutions.alterego.android.unisannio.App;
 import solutions.alterego.android.unisannio.R;
 import solutions.alterego.android.unisannio.URLS;
 import solutions.alterego.android.unisannio.interfaces.OpenArticleDetailListener;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.models.ArticleAdapter;
 
 public class GiurisprudenzaAvvisiFragment extends Fragment implements GiurisprudenzaView {

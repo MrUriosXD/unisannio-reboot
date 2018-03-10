@@ -17,19 +17,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.List;
 import javax.inject.Inject;
 import me.zhanghai.android.customtabshelper.CustomTabsHelperFragment;
 import org.chromium.customtabsclient.CustomTabsActivityHelper;
-import rx.Observer;
-import rx.android.schedulers.AndroidSchedulers;
 import solutions.alterego.android.unisannio.App;
 import solutions.alterego.android.unisannio.R;
 import solutions.alterego.android.unisannio.URLS;
 import solutions.alterego.android.unisannio.interfaces.OpenArticleDetailListener;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 import solutions.alterego.android.unisannio.models.ArticleAdapter;
-import timber.log.Timber;
 
 public class SeaAvvisiFragment extends Fragment {
 

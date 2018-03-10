@@ -2,7 +2,7 @@ package solutions.alterego.android.unisannio.ateneo;
 
 import java.util.List;
 import rx.Observable;
-import solutions.alterego.android.unisannio.models.Article;
+import solutions.alterego.android.unisannio.core.Article;
 
 public interface IAvvisiPresenter {
 

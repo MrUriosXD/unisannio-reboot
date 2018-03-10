@@ -36,7 +36,7 @@
                     android:transitionName="@string/transition_article_date"
                     tools:text="date"
                     android:id="@+id/detail_date"
-                    android:textColor="@color/primaryDarkColor"
+                    android:textColor="@color/accentColor"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"/>
             <TextView

@@ -1,4 +1,4 @@
-package solutions.alterego.android.unisannio.models
+package solutions.alterego.android.unisannio.core
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
