@@ -2,18 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item
-      android:id="@+id/navigation_home"
-      android:icon="@drawable/ic_home_black_24dp"
-      android:title="@string/title_home"/>
+      android:id="@+id/navigation_ateneo"
+      android:icon="@drawable/ic_ateneo"
+      android:title="@string/ateneo"/>
 
   <item
-      android:id="@+id/navigation_dashboard"
-      android:icon="@drawable/ic_dashboard_black_24dp"
-      android:title="@string/title_dashboard"/>
+      android:id="@+id/navigation_ingegneria"
+      android:icon="@drawable/ic_ingegneria"
+      android:title="@string/ingegneria"/>
 
   <item
-      android:id="@+id/navigation_notifications"
-      android:icon="@drawable/ic_notifications_black_24dp"
-      android:title="@string/title_notifications"/>
+      android:id="@+id/navigation_scienze"
+      android:icon="@drawable/ic_scienze"
+      android:title="@string/scienze"/>
 
+  <item
+      android:id="@+id/navigation_giurisprudenza"
+      android:icon="@drawable/ic_giurisprudenza"
+      android:title="@string/giurisprudenza"/>
+
+  <item
+      android:id="@+id/navigation_economia"
+      android:icon="@drawable/ic_sea"
+      android:title="@string/sea"/>
 </menu>

@@ -10,7 +10,7 @@ import solutions.alterego.android.unisannio.core.onError
 import solutions.alterego.android.unisannio.core.onSuccess
 import timber.log.Timber
 
-class GiurisprudenzaNewActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
