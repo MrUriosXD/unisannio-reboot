@@ -12,3 +12,8 @@ inline fun <T : Any> Result<T>.onSuccess(action: (T) -> Unit): Result<T> {
 inline fun <T : Any> Result<T>.onError(action: (Throwable) -> Unit) {
     if (this is Failure && error != null) action(error)
 }
+
+inline fun <T : Any, R : Any> Result<T>.mapOnSuccess(map: (T) -> R) = when (this) {
+    is Success -> Success(map(data))
+    is Failure -> this
+}

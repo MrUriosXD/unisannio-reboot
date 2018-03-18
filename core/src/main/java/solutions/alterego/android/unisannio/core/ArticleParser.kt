@@ -5,8 +5,12 @@ import java.util.UUID
 import javax.inject.Inject
 import kotlin.coroutines.experimental.suspendCoroutine
 
-class ArticleParser @Inject constructor() {
-    suspend fun parse(elements: Elements): Result<List<Article>> = suspendCoroutine {
+interface Parser {
+    suspend fun parse(elements: Elements): Result<List<Article>>
+}
+
+class ArticleParser @Inject constructor() : Parser {
+    override suspend fun parse(elements: Elements): Result<List<Article>> = suspendCoroutine {
         val articles = elements
             .map {
                 // If no ID is present in the XML, we generate a UUID for the sake of having an ID

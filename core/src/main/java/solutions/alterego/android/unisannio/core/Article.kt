@@ -12,5 +12,6 @@ data class Article(
     val author: String,
     val url: String,
     val body: String,
-    val date: String
+    val date: String,
+    val source: String
 ) : Parcelable

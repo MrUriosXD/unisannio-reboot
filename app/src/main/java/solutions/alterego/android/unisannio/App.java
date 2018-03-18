@@ -48,7 +48,7 @@ public class App extends MultiDexApplication {
     }
 
     public void buildComponentAndInject() {
-        component = Component.Initializer.init(this);
+        component = Component.Initializer.INSTANCE.init(this);
     }
 
     private static class CrashReportingTree extends Timber.Tree {

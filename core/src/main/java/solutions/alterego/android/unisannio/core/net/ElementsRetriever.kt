@@ -8,8 +8,15 @@ import solutions.alterego.android.unisannio.core.Success
 import javax.inject.Inject
 import kotlin.coroutines.experimental.suspendCoroutine
 
-class ElementsRetriever @Inject constructor() {
-    suspend fun fetchItems(url: String, itemTag: String): Result<Elements> = suspendCoroutine {
+interface Retriever {
+    suspend fun fetchItems(): Result<Elements>
+}
+
+class ElementsRetriever @Inject constructor(
+    private val url: String,
+    private val itemTag: String
+) : Retriever {
+    override suspend fun fetchItems(): Result<Elements> = suspendCoroutine {
         try {
             val elements = Jsoup.connect(url)
                 .timeout(10 * 1000)
