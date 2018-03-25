@@ -5,7 +5,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
@@ -17,11 +16,10 @@ import kotlinx.android.synthetic.main.activity_home.article_recyclerview
 import kotlinx.android.synthetic.main.activity_home.bottom_navigation
 import kotlinx.android.synthetic.main.activity_home.home_progressbar
 import solutions.alterego.android.unisannio.App
-import solutions.alterego.android.unisannio.Ateneo
 import solutions.alterego.android.unisannio.Giurisprudenza
+import solutions.alterego.android.unisannio.Ingegneria
 import solutions.alterego.android.unisannio.MapsActivity
 import solutions.alterego.android.unisannio.R
-import solutions.alterego.android.unisannio.R.drawable
 import solutions.alterego.android.unisannio.R.id
 import solutions.alterego.android.unisannio.core.Article
 import solutions.alterego.android.unisannio.map.UniPoint
@@ -37,43 +35,33 @@ class HomeActivity : AppCompatActivity(), HomeView {
 
     private val adapter = ArticleListAdapter()
 
-    private var faculty = Ateneo
+    private var faculty = Ingegneria
 
     override fun onCreate(savedInstanceState: Bundle?) {
         App.component(this).inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         setSupportActionBar(findViewById(R.id.home_toolbar))
-        supportActionBar?.title = "Ateneo"
+        supportActionBar?.title = "Ingegneria"
         presenter.attach(this)
 
         article_recyclerview
             .apply {
                 layoutManager = LinearLayoutManager(this@HomeActivity)
                 adapter = this@HomeActivity.adapter
-                val dividerItemDecoration = DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
-                dividerItemDecoration.setDrawable(getDrawable(drawable.list_divider))
-                addItemDecoration(dividerItemDecoration)
             }
+
+        presenter.onFacultyClicked(faculty)
 
         bottom_navigation
             .setOnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
-                    id.navigation_ateneo -> {
-                        faculty = Ateneo
-                        supportActionBar?.title = "Ateneo"
-
-                        adapter.clear()
-                    }
                     id.navigation_ingegneria -> {
-                        faculty = Ateneo
-
-                        supportActionBar?.title = "Ingegneria"
-
-                        adapter.clear()
+                        faculty = Ingegneria
+                        presenter.onFacultyClicked(faculty)
                     }
                     id.navigation_scienze -> {
-                        faculty = Ateneo
+                        faculty = Ingegneria
 
                         supportActionBar?.title = "Scienze"
 
@@ -84,7 +72,7 @@ class HomeActivity : AppCompatActivity(), HomeView {
                         presenter.onFacultyClicked(faculty)
                     }
                     id.navigation_economia -> {
-                        faculty = Ateneo
+                        faculty = Ingegneria
 
                         supportActionBar?.title = "S.E.A"
 
@@ -132,8 +120,8 @@ class HomeActivity : AppCompatActivity(), HomeView {
 
     override fun clearList() = adapter.clear()
 
-    override fun setTitleToGiurisprudenza() {
-        supportActionBar?.title = "Giurisprudenza"
+    override fun setTitle(faculty: String) {
+        supportActionBar?.title = faculty
     }
 
     override fun showProgressbar() = home_progressbar.visible()

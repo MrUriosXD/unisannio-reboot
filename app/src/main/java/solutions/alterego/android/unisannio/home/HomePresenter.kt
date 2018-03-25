@@ -34,7 +34,7 @@ class HomePresenter @Inject constructor() {
 
     fun onFacultyClicked(faculty: Faculty) {
         view?.clearList()
-        view?.setTitleToGiurisprudenza()
+        view?.setTitle(faculty.name)
 
         launch(UI) {
             view?.showProgressbar()

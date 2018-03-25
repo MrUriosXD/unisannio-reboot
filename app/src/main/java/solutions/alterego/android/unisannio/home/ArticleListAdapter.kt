@@ -6,7 +6,6 @@ import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.article_card.view.article_card_author
 import kotlinx.android.synthetic.main.article_card.view.article_card_date
 import kotlinx.android.synthetic.main.article_card.view.article_card_description
 import kotlinx.android.synthetic.main.article_card.view.article_card_title
@@ -41,10 +40,8 @@ class ArticleListAdapter : Adapter<ArticleViewHolder>() {
     class ArticleViewHolder(view: View) : ViewHolder(view) {
         fun bind(article: Article) {
             itemView.article_card_date.text = article.date.takeIf { it.isNotEmpty() } ?: "Recentemente"
-            itemView.article_card_author.text = article.author
             itemView.article_card_title.text = article.title
             itemView.article_card_description.text = Html.fromHtml(article.body).trim()
         }
-
     }
 }

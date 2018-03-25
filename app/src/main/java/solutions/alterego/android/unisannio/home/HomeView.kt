@@ -4,7 +4,7 @@ import solutions.alterego.android.unisannio.core.Article
 import solutions.alterego.android.unisannio.map.UniPoint
 
 interface HomeView {
-    fun setTitleToGiurisprudenza()
+    fun setTitle(faculty: String)
 
     fun showProgressbar()
     fun hideProgressbar()
