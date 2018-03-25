@@ -5,6 +5,7 @@ import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
+import com.novoda.simplechromecustomtabs.SimpleChromeCustomTabs;
 import com.squareup.leakcanary.LeakCanary;
 import io.fabric.sdk.android.Fabric;
 import net.danlew.android.joda.JodaTimeAndroid;
@@ -21,6 +22,12 @@ public class App extends MultiDexApplication {
 
     @Override public void onCreate() {
         super.onCreate();
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        } else {
+            Timber.plant(new CrashReportingTree());
+        }
 
         if (!BuildConfig.DEBUG) {
             Fabric.with(this, new Crashlytics());
@@ -40,11 +47,7 @@ public class App extends MultiDexApplication {
                 .build());
         }
 
-        if (BuildConfig.DEBUG) {
-            Timber.plant(new Timber.DebugTree());
-        } else {
-            Timber.plant(new CrashReportingTree());
-        }
+        SimpleChromeCustomTabs.initialize(this);
     }
 
     public void buildComponentAndInject() {

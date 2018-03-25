@@ -17,12 +17,10 @@ buildscript {
 repositories {
     mavenCentral()
     jcenter()
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     maven { url 'https://maven.fabric.io/public' }
     maven { url "https://jitpack.io" }
-    maven { url "https://github.com/alter-ego/Android-RSS-Reader-Library/raw/master/releases/" }
+    maven { url "http://dl.bintray.com/novoda/maven" }
     google()
 }
 
@@ -102,7 +100,6 @@ android {
 
 configurations.all {
     resolutionStrategy {
-        force 'com.android.support:customtabs:26.1.0'
         cacheDynamicVersionsFor 10 * 60, 'seconds'
     }
 }
@@ -158,7 +155,7 @@ dependencies {
     // UI
     implementation 'com.joanzapata.iconify:android-iconify:2.2.2'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
-    implementation 'me.zhanghai.android.customtabshelper:library:1.0.4'
+    implementation 'com.novoda:simple-chrome-custom-tabs:0.1.5'
 
     // Utils
     implementation 'net.danlew:android.joda:2.9.9.1'

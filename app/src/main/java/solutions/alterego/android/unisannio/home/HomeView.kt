@@ -11,4 +11,5 @@ interface HomeView {
     fun clearList()
     fun addArticles(articles: List<Article>)
 
+    fun openWebsite(website: String)
 }
