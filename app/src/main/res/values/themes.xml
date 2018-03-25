@@ -3,14 +3,12 @@
   <style name="AppTheme" parent="AppTheme.Base"/>
 
   <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
-    <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/primaryColor</item>
     <item name="colorPrimaryDark">@color/primaryDarkColor</item>
     <item name="colorAccent">@color/accentColor</item>
-    <item name="android:textColorPrimary">@color/textPrimaryColor</item>
+    <item name="android:textColorPrimary">@color/black</item>
     <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
-    <item name="android:windowBackground">@color/myWindowBackground</item>
-    <item name="android:windowAnimationStyle">@null</item>
+    <item name="android:windowBackground">@color/white</item>
   </style>
 
   <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
