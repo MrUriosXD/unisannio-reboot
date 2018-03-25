@@ -1,4 +1,4 @@
-package solutions.alterego.android.unisannio
+package solutions.alterego.android.unisannio.home
 
 import android.support.v7.widget.RecyclerView.Adapter
 import android.support.v7.widget.RecyclerView.ViewHolder
@@ -10,9 +10,9 @@ import kotlinx.android.synthetic.main.article_card.view.article_card_author
 import kotlinx.android.synthetic.main.article_card.view.article_card_date
 import kotlinx.android.synthetic.main.article_card.view.article_card_description
 import kotlinx.android.synthetic.main.article_card.view.article_card_title
-import solutions.alterego.android.unisannio.ArticleListAdapter.ArticleViewHolder
 import solutions.alterego.android.unisannio.R.layout
 import solutions.alterego.android.unisannio.core.Article
+import solutions.alterego.android.unisannio.home.ArticleListAdapter.ArticleViewHolder
 
 class ArticleListAdapter : Adapter<ArticleViewHolder>() {
 

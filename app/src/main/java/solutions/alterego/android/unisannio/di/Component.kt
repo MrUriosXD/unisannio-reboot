@@ -1,7 +1,7 @@
 package solutions.alterego.android.unisannio.di
 
 import solutions.alterego.android.unisannio.App
-import solutions.alterego.android.unisannio.HomeActivity
+import solutions.alterego.android.unisannio.home.HomeActivity
 import javax.inject.Singleton
 
 @Singleton

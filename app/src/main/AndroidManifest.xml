@@ -40,7 +40,7 @@
         android:name="com.crashlytics.ApiKey"
         android:value="8501bc0640d6af5e895dfc1c5d65a99fbd2c0286"/>
     <activity
-        android:name=".HomeActivity">
+        android:name=".home.HomeActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
