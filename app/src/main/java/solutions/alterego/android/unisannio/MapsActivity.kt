@@ -10,7 +10,11 @@ import com.google.android.gms.maps.model.MarkerOptions
 import solutions.alterego.android.unisannio.map.UniPoint
 import java.util.ArrayList
 
+
 class MapsActivity : FragmentActivity(), OnMapReadyCallback {
+    companion object {
+        val MARKERS = "MARKERS"
+    }
 
     private var markers = ArrayList<UniPoint>()
 
@@ -23,12 +27,12 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putParcelableArrayList("MARKERS", markers)
+        outState.putParcelableArrayList(MARKERS, markers)
         super.onSaveInstanceState(outState)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        markers = intent.getParcelableArrayListExtra("MARKERS")
+        markers = intent.getParcelableArrayListExtra(MARKERS)
 
         markers.forEach { marker ->
             googleMap.addMarker(

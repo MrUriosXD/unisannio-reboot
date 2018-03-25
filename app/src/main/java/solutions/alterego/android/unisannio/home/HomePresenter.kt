@@ -4,7 +4,6 @@ import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
 import solutions.alterego.android.unisannio.Faculty
-import solutions.alterego.android.unisannio.Giurisprudenza
 import solutions.alterego.android.unisannio.core.mapOnSuccess
 import solutions.alterego.android.unisannio.core.onError
 import solutions.alterego.android.unisannio.core.onSuccess
@@ -21,17 +20,25 @@ class HomePresenter @Inject constructor() {
         this.view = view
     }
 
-    private var faculty: Faculty? = null
+    fun goToWebsite(faculty: Faculty) {
+        view?.openWebsite(faculty.website)
+    }
 
-    fun onGiurisprudenzaClicked() {
-        faculty = Giurisprudenza
+    fun goToMap(faculty: Faculty) {
+        view?.goToMap(faculty.mapMarkers)
+    }
 
+    fun detach() {
+        this.view = null
+    }
+
+    fun onFacultyClicked(faculty: Faculty) {
         view?.clearList()
         view?.setTitleToGiurisprudenza()
 
         launch(UI) {
             view?.showProgressbar()
-            val section = Giurisprudenza.sections.first()
+            val section = faculty.sections.first()
             val elements = async { section.retriever.fetchItems() }.await()
 
             elements
@@ -52,20 +59,5 @@ class HomePresenter @Inject constructor() {
                     Timber.e(it)
                 }
         }
-    }
-
-    fun goToWebsite() {
-        if (faculty == null) return
-        else {
-            view?.openWebsite(faculty?.website!!)
-        }
-    }
-
-    fun goToMap() {
-        Timber.d("Go to Map")
-    }
-
-    fun detach() {
-        this.view = null
     }
 }

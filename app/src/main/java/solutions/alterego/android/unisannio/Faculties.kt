@@ -24,6 +24,14 @@ data class Section(
     val retriever: Retriever
 )
 
+val Ateneo = Faculty(
+    0,
+    "Ateneo",
+    "",
+    UnisannioGeoData.ATENEO(),
+    listOf()
+)
+
 val Giurisprudenza = Faculty(
     0,
     "Giurisprudenza",

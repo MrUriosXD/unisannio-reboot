@@ -17,10 +17,14 @@ import kotlinx.android.synthetic.main.activity_home.article_recyclerview
 import kotlinx.android.synthetic.main.activity_home.bottom_navigation
 import kotlinx.android.synthetic.main.activity_home.home_progressbar
 import solutions.alterego.android.unisannio.App
+import solutions.alterego.android.unisannio.Ateneo
+import solutions.alterego.android.unisannio.Giurisprudenza
+import solutions.alterego.android.unisannio.MapsActivity
 import solutions.alterego.android.unisannio.R
 import solutions.alterego.android.unisannio.R.drawable
 import solutions.alterego.android.unisannio.R.id
 import solutions.alterego.android.unisannio.core.Article
+import solutions.alterego.android.unisannio.map.UniPoint
 import solutions.alterego.android.unisannio.utils.gone
 import solutions.alterego.android.unisannio.utils.visible
 import javax.inject.Inject
@@ -32,6 +36,8 @@ class HomeActivity : AppCompatActivity(), HomeView {
     lateinit var presenter: HomePresenter
 
     private val adapter = ArticleListAdapter()
+
+    private var faculty = Ateneo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         App.component(this).inject(this)
@@ -54,22 +60,32 @@ class HomeActivity : AppCompatActivity(), HomeView {
             .setOnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     id.navigation_ateneo -> {
+                        faculty = Ateneo
                         supportActionBar?.title = "Ateneo"
 
                         adapter.clear()
                     }
                     id.navigation_ingegneria -> {
+                        faculty = Ateneo
+
                         supportActionBar?.title = "Ingegneria"
 
                         adapter.clear()
                     }
                     id.navigation_scienze -> {
+                        faculty = Ateneo
+
                         supportActionBar?.title = "Scienze"
 
                         adapter.clear()
                     }
-                    id.navigation_giurisprudenza -> presenter.onGiurisprudenzaClicked()
+                    id.navigation_giurisprudenza -> {
+                        faculty = Giurisprudenza
+                        presenter.onFacultyClicked(faculty)
+                    }
                     id.navigation_economia -> {
+                        faculty = Ateneo
+
                         supportActionBar?.title = "S.E.A"
 
                         adapter.clear()
@@ -88,11 +104,11 @@ class HomeActivity : AppCompatActivity(), HomeView {
         val id = item.itemId
         return when (id) {
             R.id.action_web_page -> {
-                presenter.goToWebsite()
+                presenter.goToWebsite(faculty)
                 true
             }
             R.id.action_map -> {
-                presenter.goToMap()
+                presenter.goToMap(faculty)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -150,5 +166,14 @@ class HomeActivity : AppCompatActivity(), HomeView {
             .withDefaultShareMenuItem()
             .withStartAnimations(applicationContext, R.anim.slide_in_right, R.anim.slide_out_left)
             .withExitAnimations(applicationContext, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+    }
+
+    override fun goToMap(mapMarkers: List<UniPoint>) {
+        val points = arrayListOf<UniPoint>()
+        points.addAll(mapMarkers)
+
+        val intent = Intent(this, MapsActivity::class.java)
+        intent.putParcelableArrayListExtra(MapsActivity.MARKERS, points)
+        startActivity(intent)
     }
 }
