@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.amplitude.api.Amplitude
 import com.novoda.simplechromecustomtabs.SimpleChromeCustomTabs
 import com.novoda.simplechromecustomtabs.navigation.IntentCustomizer
 import com.novoda.simplechromecustomtabs.navigation.NavigationFallback
@@ -16,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_home.article_recyclerview
 import kotlinx.android.synthetic.main.activity_home.bottom_navigation
 import kotlinx.android.synthetic.main.activity_home.home_progressbar
 import solutions.alterego.android.unisannio.App
+import solutions.alterego.android.unisannio.BuildConfig
 import solutions.alterego.android.unisannio.Giurisprudenza
 import solutions.alterego.android.unisannio.Ingegneria
 import solutions.alterego.android.unisannio.MapsActivity
@@ -26,7 +28,6 @@ import solutions.alterego.android.unisannio.map.UniPoint
 import solutions.alterego.android.unisannio.utils.gone
 import solutions.alterego.android.unisannio.utils.visible
 import javax.inject.Inject
-
 
 class HomeActivity : AppCompatActivity(), HomeView {
 
@@ -39,8 +40,13 @@ class HomeActivity : AppCompatActivity(), HomeView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         App.component(this).inject(this)
+        Amplitude.getInstance()
+            .initialize(this, BuildConfig.AMPLITUDE_KEY)
+            .enableForegroundTracking(application);
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
         setSupportActionBar(findViewById(R.id.home_toolbar))
         supportActionBar?.title = "Ingegneria"
         presenter.attach(this)

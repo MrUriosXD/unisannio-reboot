@@ -1,8 +1,10 @@
 package solutions.alterego.android.unisannio.home
 
+import com.amplitude.api.Amplitude
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
+import org.json.JSONObject
 import solutions.alterego.android.unisannio.Faculty
 import solutions.alterego.android.unisannio.core.mapOnSuccess
 import solutions.alterego.android.unisannio.core.onError
@@ -21,10 +23,18 @@ class HomePresenter @Inject constructor() {
     }
 
     fun goToWebsite(faculty: Faculty) {
+        val eventProperties = JSONObject()
+        eventProperties.put("Faculty", faculty.name)
+        Amplitude.getInstance().logEvent("Go to Website", eventProperties)
+
         view?.openWebsite(faculty.website)
     }
 
     fun goToMap(faculty: Faculty) {
+        val eventProperties = JSONObject()
+        eventProperties.put("Faculty", faculty.name)
+        Amplitude.getInstance().logEvent("Go to Map", eventProperties)
+
         view?.goToMap(faculty.mapMarkers)
     }
 
@@ -33,6 +43,8 @@ class HomePresenter @Inject constructor() {
     }
 
     fun onFacultyClicked(faculty: Faculty) {
+        Amplitude.getInstance().logEvent("Open ${faculty.name}")
+
         view?.clearList()
         view?.setTitle(faculty.name)
 
