@@ -48,9 +48,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../../android-keystore")
-            storePassword ""
+            storePassword "$System.env.UNISANNIO_KEYSTORE_PASSWORD"
             keyAlias "android"
-            keyPassword ""
+            keyPassword "$System.env.UNISANNIO_KEY_PASSWORD"
         }
     }
 
