@@ -32,7 +32,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:transitionName="@string/transition_article_date"
                 tools:text="email"
                 android:id="@+id/detail_cercapersone_email"
                 android:textColor="@color/primaryDarkColor"
@@ -43,7 +42,6 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 tools:text="role"
-                android:transitionName="@string/transition_article_title"
                 android:id="@+id/detail_cercapersone_role"
                 android:layout_below="@+id/detail_cercapersone_email"
                 android:layout_centerHorizontal="true"/>
@@ -98,7 +96,6 @@
                 tools:text="name"
                 android:textStyle="bold"
                 android:textColor="@color/accentColor"
-                android:transitionName="@string/transition_article_author"
                 android:id="@+id/detail_cercapersone_name"
                 android:layout_below="@+id/detail_cercapersone_tutoring"
                 android:layout_alignParentRight="true"

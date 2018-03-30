@@ -1,67 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout_cercapersone"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="solutions.alterego.android.unisannio.ingegneria.IngengeriaCercapersoneActivity"
-    android:weightSum="1"
-    android:orientation="vertical"
-    android:background="@drawable/arco02">
+    >
+
+  <LinearLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/arco02"
+      android:orientation="vertical"
+      android:weightSum="1"
+      tools:context="solutions.alterego.android.unisannio.ingegneria.IngengeriaCercapersoneActivity"
+      >
 
     <include
-        android:id="@+id/toolbar_actionbar"
         layout="@layout/toolbar_default"
+        android:id="@+id/toolbar_actionbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        />
 
     <SearchView
         android:id="@+id/searchView_Cercapersone_Ingegneria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:background="@color/unisannio_yellow">
+        android:layout_centerHorizontal="true"
+        android:background="@color/unisannio_yellow"
+        >
     </SearchView>
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/cercapersone_ingegneria_swipe_container"
+      <android.support.v4.widget.SwipeRefreshLayout
+          android:id="@+id/cercapersone_ingegneria_swipe_container"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cercapersone_ingegneria_recycle_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/cercapersone_ingegneria_recycle_view"
-                android:clipToPadding="false"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingRight="16dp"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"/>
-        </android.support.v4.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            />
+      </android.support.v4.widget.SwipeRefreshLayout>
 
     </FrameLayout>
-</LinearLayout>
-
-    <android.support.design.widget.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/drawer"
-        app:itemIconTint="@color/unisannio_yellow"/>
-
+  </LinearLayout>
 </android.support.v4.widget.DrawerLayout>
