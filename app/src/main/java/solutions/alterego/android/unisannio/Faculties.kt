@@ -49,3 +49,31 @@ val Giurisprudenza = Faculty(
         )
     )
 )
+
+val Scienze = Faculty(
+    "Scienze e Tecnologie",
+    "http://www.dstunisannio.it",
+    UnisannioGeoData.SCIENZE(),
+    listOf(
+        Section(
+            "Avvisi",
+            "http://www.dstunisannio.it/index.php/didattica?format=feed&type=rss",
+            ArticleParser(),
+            ElementsRetriever("http://www.dstunisannio.it/index.php/didattica?format=feed&type=rss", "item")
+        )
+    )
+)
+
+val Sea = Faculty(
+    "SEA",
+    "http://www.didatticademm.it/",
+    UnisannioGeoData.SEA(),
+    listOf(
+        Section(
+            "Avvisi",
+            "http://www.didatticademm.it/index.php?format=feed&type=rss",
+            ArticleParser(),
+            ElementsRetriever("http://www.didatticademm.it/index.php?format=feed&type=rss", "item")
+        )
+    )
+)

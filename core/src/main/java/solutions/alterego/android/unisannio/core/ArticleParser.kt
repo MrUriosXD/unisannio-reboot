@@ -18,12 +18,17 @@ class ArticleParser @Inject constructor() : Parser {
                     val id = elements.select("guid")?.first()?.text()
                         .takeUnless { it.isNullOrEmpty() } ?: UUID.randomUUID().toString()
 
+                    val url = item.select("link")?.first()?.text() ?: ""
+                    val description = item.select("description")?.first()?.text()
+
+                    val body = if (description.isNullOrEmpty() || description == "<![CDATA[]]>") url else description
+
                     Article(
                         id = id,
                         title = item.select("title")?.first()?.text() ?: "",
                         author = item.select("author")?.first()?.text() ?: "",
-                        url = item.select("link")?.first()?.text() ?: "",
-                        body = item.select("description")?.first()?.text() ?: "",
+                        url = url,
+                        body = body ?: "",
                         date = item.select("pubDate")?.first()?.text() ?: "",
                         source = item.select("source")?.first()?.text() ?: ""
                     )

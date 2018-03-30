@@ -23,6 +23,8 @@ import solutions.alterego.android.unisannio.Ingegneria
 import solutions.alterego.android.unisannio.MapsActivity
 import solutions.alterego.android.unisannio.R
 import solutions.alterego.android.unisannio.R.id
+import solutions.alterego.android.unisannio.Scienze
+import solutions.alterego.android.unisannio.Sea
 import solutions.alterego.android.unisannio.core.Article
 import solutions.alterego.android.unisannio.map.UniPoint
 import solutions.alterego.android.unisannio.utils.gone
@@ -62,29 +64,12 @@ class HomeActivity : AppCompatActivity(), HomeView {
         bottom_navigation
             .setOnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
-                    id.navigation_ingegneria -> {
-                        faculty = Ingegneria
-                        presenter.onFacultyClicked(faculty)
-                    }
-                    id.navigation_scienze -> {
-                        faculty = Ingegneria
-
-                        supportActionBar?.title = "Scienze"
-
-                        adapter.clear()
-                    }
-                    id.navigation_giurisprudenza -> {
-                        faculty = Giurisprudenza
-                        presenter.onFacultyClicked(faculty)
-                    }
-                    id.navigation_economia -> {
-                        faculty = Ingegneria
-
-                        supportActionBar?.title = "S.E.A"
-
-                        adapter.clear()
-                    }
+                    id.navigation_ingegneria -> faculty = Ingegneria
+                    id.navigation_scienze -> faculty = Scienze
+                    id.navigation_giurisprudenza -> faculty = Giurisprudenza
+                    id.navigation_economia -> faculty = Sea
                 }
+                presenter.onFacultyClicked(faculty)
                 true
             }
     }
